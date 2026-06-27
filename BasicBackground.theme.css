@@ -13,36 +13,34 @@
     background: var(--background-image) center/cover fixed no-repeat !important;
 }
 
-/* Remove Discord's solid theme backgrounds */
-.theme-dark,
-.theme-light {
-    --background-primary: transparent !important;
-    --background-secondary: rgba(0, 0, 0, 0.25) !important;
-    --background-secondary-alt: rgba(0, 0, 0, 0.20) !important;
-    --background-tertiary: transparent !important;
-    --background-base-lower: transparent !important;
-    --background-base-low: transparent !important;
-    --background-base: transparent !important;
+/* Main Discord areas only */
+[class*="chatContent"] {
+    background: rgba(0,0,0,0.20) !important;
 }
 
-/* Main Discord panels */
-[class*="chat_"],
-[class*="chatContent"],
-[class*="container_"],
-[class*="sidebar_"],
-[class*="members_"] {
-    background-color: transparent !important;
-}
-
-/* Add back readability */
 [class*="sidebar_"] {
-    background-color: rgba(0,0,0,0.20) !important;
+    background: rgba(0,0,0,0.45) !important;
 }
 
-[class*="members_"] {
-    background-color: rgba(0,0,0,0.20) !important;
+[class*="guilds_"] {
+    background: rgba(0,0,0,0.55) !important;
+}
+
+[class*="membersWrap"] {
+    background: rgba(0,0,0,0.35) !important;
 }
 
 [class*="channelTextArea"] {
-    background-color: rgba(0,0,0,0.30) !important;
+    background: rgba(0,0,0,0.45) !important;
+}
+
+
+/* DO NOT make settings/popouts transparent */
+[class*="layer_"],
+[class*="modal_"],
+[class*="settings_"],
+[class*="userPopout"],
+[class*="menu_"],
+[class*="focusLock"] {
+    background-color: #111214 !important;
 }
