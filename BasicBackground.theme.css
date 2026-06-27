@@ -1,103 +1,191 @@
 /**
- * @name Breathe.
+ * @name breathe.
  * @author unknowenuser_95
+ * @description Just breathe.
  * @version 1.0
  */
 
+/* =========================
+   CUSTOM VARIABLES
+========================= */
+
 :root {
-    --background-fallback: #111214;
-    --background-image: url("https://raw.githubusercontent.com/ULSC-Official/breathe./main/Screenshot%202026-06-26%20153918.png");
-    --overlay-dark: rgba(0,0,0,0.45);
-    --panel-dark: rgba(0,0,0,0.45);
+    --background-image: url("https://raw.githubusercontent.com/ULSC-Official/breathe./main/Screenshot%202026-06-26%20153918.png);
+
+    --chat-opacity: 0.18;
+    --sidebar-opacity: 0.25;
+    --panel-opacity: 0.35;
+
+    --blur: 12px;
+
+    --solid-background: rgb(20, 20, 20);
 }
 
-/* Wallpaper */
-html,
-body {
-    background-image:
-        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
-        url("https://raw.githubusercontent.com/ULSC-Official/breathe./main/Screenshot%202026-06-26%20153918.png") !important;
-    background-position: center !important;
-    background-size: cover !important;
-    background-attachment: fixed !important;
-    background-repeat: no-repeat !important;
-    background-color: var(--background-fallback) !important;
-}
-
-/* Allow wallpaper through */
-[class^="bg_"] {
-    background: transparent !important;
-}
-
-/* Reveal wallpaper behind Discord */
-[class^="app_"],
-[class^="bg_"],
-[class^="base_"] {
-    background: transparent !important;
-}
-
-/* Main Discord areas only */
-[class^="chatContent_"] {
-    background: rgba(0,0,0,0.20) !important;
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-    overflow: hidden;
-}
-
-[class^="sidebar_"] {
-    background: var(--panel-dark) !important;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    transition: background 0.3s ease, backdrop-filter 0.3s ease;
-    overflow: hidden;
-}
-
-[class^="guilds_"] {
-    background: rgba(0,0,0,0.55) !important;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-}
-
-[class^="membersWrap_"] {
-    background: rgba(0,0,0,0.35) !important;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    transition: background 0.3s ease, backdrop-filter 0.3s ease;
-    overflow: hidden;
-}
-
-[class^="channelTextArea_"] {
-    background: rgba(20,20,20,0.65) !important;
-    border-radius: 12px;
-    transition: background 0.3s ease, backdrop-filter 0.3s ease;
-}
 
 /* =========================
-   SETTINGS + OVERLAYS FIX
-   ========================= */
+   MAIN BACKGROUND
+========================= */
 
-[class*="layerContainer_"] {
+body {
+    background: var(--background-image) center / cover fixed no-repeat !important;
+}
+
+#app-mount {
     background: transparent !important;
 }
 
-/* Main Settings layout */
-[class*="standardSidebarView_"] {
-    background: #111214 !important;
+
+/* =========================
+   DISCORD MAIN LAYOUT
+========================= */
+
+[class*="base_"] {
+    background: transparent !important;
 }
 
-/* Left sidebar in settings */
-[class*="sidebarRegionScroller_"],
-[class*="sidebarRegion_"] {
-    background: #111214 !important;
+
+/* =========================
+   SERVER LIST
+========================= */
+
+[class*="guilds_"] {
+    background: rgba(0, 0, 0, var(--sidebar-opacity)) !important;
+    backdrop-filter: blur(var(--blur));
 }
 
-/* Main content panel */
+
+/* =========================
+   CHANNEL SIDEBAR
+========================= */
+
+[class*="sidebar_"] {
+    background: rgba(0, 0, 0, var(--sidebar-opacity)) !important;
+    backdrop-filter: blur(var(--blur));
+}
+
+
+/* =========================
+   FRIENDS / HOME MENU
+========================= */
+
+/* Friends list */
+[class*="container_"] {
+    background: rgba(0, 0, 0, var(--chat-opacity)) !important;
+}
+
+
+/* Friends page */
+[class*="peopleColumn_"],
+[class*="nowPlayingColumn_"] {
+    background: rgba(0, 0, 0, 0.25) !important;
+    backdrop-filter: blur(var(--blur));
+}
+
+
+/* =========================
+   CHAT AREA
+========================= */
+
+[class*="chat_"],
+[class*="chatContent_"] {
+    background: rgba(0, 0, 0, var(--chat-opacity)) !important;
+    backdrop-filter: blur(var(--blur));
+}
+
+
+/* =========================
+   MEMBER LIST
+========================= */
+
+[class*="membersWrap_"],
+[class*="members_"] {
+    background: rgba(0, 0, 0, var(--sidebar-opacity)) !important;
+    backdrop-filter: blur(var(--blur));
+}
+
+
+/* =========================
+   MESSAGE BOX
+========================= */
+
+[class*="channelTextArea_"] {
+    background: rgba(0, 0, 0, 0.35) !important;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+}
+
+
+/* =========================
+   SEARCH BAR
+========================= */
+
+[class*="searchBar_"] {
+    background: rgba(0,0,0,0.25) !important;
+    backdrop-filter: blur(10px);
+}
+
+
+/* =========================
+   SETTINGS MENU
+   (FULLY OPAQUE)
+========================= */
+
+[class*="standardSidebarView_"],
 [class*="contentRegion_"],
-[class*="contentRegionScroller_"] {
-    background: #111214 !important;
+[class*="contentRegionScroller_"],
+[class*="sidebarRegion_"],
+[class*="sidebarRegionScroller_"] {
+
+    background: var(--solid-background) !important;
+    backdrop-filter: none !important;
 }
 
-/* Extra safety for nested panels */
-[class*="contentRegionShownSidebar_"] {
-    background: #111214 !important;
+
+/* Settings text area */
+[class*="contentColumn_"] {
+    background: var(--solid-background) !important;
+}
+
+
+/* =========================
+   POPOUTS / MENUS
+========================= */
+
+[class*="popout_"],
+[class*="menu_"],
+[class*="modal_"],
+[class*="layerContainer_"] {
+
+    background: rgba(20,20,20,0.95) !important;
+    backdrop-filter: blur(15px);
+    border-radius: 12px;
+}
+
+
+/* =========================
+   USER PROFILE POPUP
+========================= */
+
+[class*="userPopout_"] {
+    background: rgba(15,15,15,0.95) !important;
+    backdrop-filter: blur(15px);
+}
+
+
+/* =========================
+   MESSAGES
+========================= */
+
+[class*="message_"] {
+    background: transparent !important;
+}
+
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.15);
+    border-radius: 10px;
 }
