@@ -25,7 +25,6 @@ body,
     background-color: var(--background-fallback) !important;
 }
 
-#app-mount,
 .appMount_fae9dd,
 [class^="bg_"],
 [class^="layers_"],
@@ -80,11 +79,32 @@ body,
     transition: background 0.3s ease, backdrop-filter 0.3s ease;
 }
 
-/* DO NOT make settings/popouts transparent */
-[class^="modal_"],
-[class^="settings_"],
-[class^="userPopout_"],
-[class^="menu_"],
-[class^="focusLock_"] {
-    background-color: #111214 !important;
+/* =========================
+   SETTINGS + OVERLAYS FIX
+   ========================= */
+
+[class*="layerContainer_"] {
+    background: transparent !important;
+}
+
+/* Main Settings layout */
+[class*="standardSidebarView_"] {
+    background: #111214 !important;
+}
+
+/* Left sidebar in settings */
+[class*="sidebarRegionScroller_"],
+[class*="sidebarRegion_"] {
+    background: #111214 !important;
+}
+
+/* Main content panel */
+[class*="contentRegion_"],
+[class*="contentRegionScroller_"] {
+    background: #111214 !important;
+}
+
+/* Extra safety for nested panels */
+[class*="contentRegionShownSidebar_"] {
+    background: #111214 !important;
 }
