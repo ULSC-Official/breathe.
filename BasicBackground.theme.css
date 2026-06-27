@@ -29,13 +29,11 @@ body {
     background: transparent !important;
 }
 
-/* Only clear actual chat layers */
-[class^="base_"],
-[class^="chat_"],
-[class^="chatContent_"],
-[class^="title_"],
-[class^="members_"] {
-    background-color: transparent !important;
+/* Reveal wallpaper behind Discord */
+[class^="app_"],
+[class^="bg_"],
+[class^="base_"] {
+    background: transparent !important;
 }
 
 /* Main Discord areas only */
