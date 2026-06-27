@@ -11,64 +11,36 @@
 ========================= */
 
 :root {
-    --background-image: url("https://raw.githubusercontent.com/ULSC-Official/breathe./main/breathe.png");
+    --background-image: url("https://picsum.photos/1920/1080");
 
-    --chat-bg: rgba(0, 0, 0, 0.18);
     --sidebar-bg: rgba(0, 0, 0, 0.25);
-    --panel-bg: rgb(20, 20, 20);
+    --chat-bg: rgba(0, 0, 0, 0.18);
+    --settings-bg: rgb(20, 20, 20);
 }
 
 
 /* =========================
-   WALLPAPER LAYER
+   BACKGROUND
 ========================= */
 
 body {
-    background: transparent !important;
+    background-image: var(--background-image) !important;
+    background-position: center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
 }
+
 
 #app-mount {
     background: transparent !important;
 }
 
-/* Actual wallpaper */
-#app-mount::before {
-    content: "";
-    position: fixed;
-    inset: 0;
 
-    background-image: var(--background-image);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
-    z-index: -2;
-    pointer-events: none;
-}
-
-
-/* Optional darkness overlay */
-#app-mount::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-
-    background: rgba(0,0,0,0.15);
-
-    z-index: -1;
-    pointer-events: none;
-}
-
-
-/* =========================
-   MAIN LAYOUT
-========================= */
-
+/* Discord background containers */
+[class*="app_"],
+[class*="bg_"],
 [class*="base_"] {
-    background: transparent !important;
-}
-
-[class*="app_"] {
     background: transparent !important;
 }
 
@@ -83,7 +55,7 @@ body {
 
 
 /* =========================
-   CHANNEL SIDEBAR
+   CHANNEL LIST
 ========================= */
 
 [class*="sidebar_"] {
@@ -92,21 +64,19 @@ body {
 
 
 /* =========================
-   CHAT AREA
+   CHAT
 ========================= */
 
-[class*="chat_"],
 [class*="chatContent_"] {
     background: var(--chat-bg) !important;
 }
 
 
 /* =========================
-   MEMBER LIST
+   MEMBERS
 ========================= */
 
-[class*="membersWrap_"],
-[class*="members_"] {
+[class*="membersWrap_"] {
     background: var(--sidebar-bg) !important;
 }
 
@@ -122,17 +92,7 @@ body {
 
 
 /* =========================
-   FRIENDS / HOME MENU
-========================= */
-
-[class*="peopleColumn_"],
-[class*="nowPlayingColumn_"] {
-    background: rgba(20,20,20,0.85) !important;
-}
-
-
-/* =========================
-   SETTINGS MENU
+   SETTINGS
 ========================= */
 
 [class*="standardSidebarView_"],
@@ -140,36 +100,28 @@ body {
 [class*="contentRegionScroller_"],
 [class*="sidebarRegion_"],
 [class*="sidebarRegionScroller_"] {
-    background: var(--panel-bg) !important;
+    background: var(--settings-bg) !important;
 }
 
 
 /* =========================
-   POPUPS / MENUS
+   FRIENDS PAGE
+========================= */
+
+[class*="peopleColumn_"],
+[class*="nowPlayingColumn_"] {
+    background: rgb(20,20,20) !important;
+}
+
+
+/* =========================
+   MENUS / POPOUTS
 ========================= */
 
 [class*="menu_"],
 [class*="popout_"],
 [class*="modal_"] {
     background: rgba(20,20,20,0.96) !important;
-}
-
-
-/* =========================
-   REMOVE LAYER TRANSPARENCY ISSUES
-========================= */
-
-[class*="layer_"] {
-    background: transparent !important;
-}
-
-
-/* =========================
-   MESSAGES
-========================= */
-
-[class*="message_"] {
-    background: transparent !important;
 }
 
 
