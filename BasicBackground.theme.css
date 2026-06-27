@@ -1,0 +1,25 @@
+/* To change stuff like the colors, transparency and background image, change the variables inside the root {}. */
+
+:root {
+    --background-image: url("https://raw.githubusercontent.com/ULSC-Official/breathe./main/Screenshot%202026-06-26%20153918.png");
+}
+
+body {
+    background: var(--background-image) center/cover fixed no-repeat;
+}
+
+[class*="chatContent"] {
+    background: rgba(0,0,0,0.15);
+}
+
+[class*="sidebar"] {
+    background: rgba(0,0,0,0.15);
+}
+
+[class*="members"] {
+    background: rgba(0,0,0,0.15);
+}
+
+[class*="channelTextArea"] {
+    background: rgba(0,0,0,0.25);
+}
