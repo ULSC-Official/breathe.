@@ -5,42 +5,69 @@
  */
 
 :root {
+    --background-fallback: #111214;
     --background-image: url("https://raw.githubusercontent.com/ULSC-Official/breathe./main/Screenshot%202026-06-26%20153918.png");
+    --overlay-dark: rgba(0,0,0,0.45);
+    --panel-dark: rgba(0,0,0,0.45);
 }
 
 /* Wallpaper */
+html,
+body,
 #app-mount {
-    background: var(--background-image) center/cover fixed no-repeat !important;
+    background:
+        var(--overlay-dark),
+        var(--background-image) center/cover fixed no-repeat,
+        var(--background-fallback) !important;
+}
+
+[class^="app_"] {
+    background: transparent !important;
 }
 
 /* Main Discord areas only */
-[class*="chatContent"] {
+[class^="chatContent_"] {
     background: rgba(0,0,0,0.20) !important;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
 }
 
-[class*="sidebar_"] {
-    background: rgba(0,0,0,0.45) !important;
+[class^="sidebar_"] {
+    background: var(--panel-dark) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: background 0.3s ease, backdrop-filter 0.3s ease;
 }
 
-[class*="guilds_"] {
+[class^="guilds_"] {
     background: rgba(0,0,0,0.55) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
-[class*="membersWrap"] {
+[class^="membersWrap_"] {
     background: rgba(0,0,0,0.35) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: background 0.3s ease, backdrop-filter 0.3s ease;
 }
 
-[class*="channelTextArea"] {
-    background: rgba(0,0,0,0.45) !important;
+[class^="channelTextArea_"] {
+    background: rgba(20,20,20,0.65) !important;
+    border-radius: 12px;
+    transition: background 0.3s ease, backdrop-filter 0.3s ease;
 }
 
+[class^="chat_"],
+[class^="content_"] {
+    background: transparent !important;
+}
 
 /* DO NOT make settings/popouts transparent */
-[class*="layer_"],
-[class*="modal_"],
-[class*="settings_"],
-[class*="userPopout"],
-[class*="menu_"],
-[class*="focusLock"] {
+[class^="modal_"],
+[class^="settings_"],
+[class^="userPopout_"],
+[class^="menu_"],
+[class^="focusLock_"] {
     background-color: #111214 !important;
 }
