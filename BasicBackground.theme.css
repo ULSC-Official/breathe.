@@ -5,6 +5,7 @@
  * @version 1.0
  */
 
+
 /* =========================
    VARIABLES
 ========================= */
@@ -14,25 +15,28 @@
 
     --chat-bg: rgba(0, 0, 0, 0.18);
     --sidebar-bg: rgba(0, 0, 0, 0.25);
-    --panel-bg: rgba(20, 20, 20, 0.95);
+    --panel-bg: rgb(20, 20, 20);
 }
 
 
 /* =========================
-   WALLPAPER
+   BACKGROUND
 ========================= */
 
-body {
+body,
+#app-mount {
     background: var(--background-image) center / cover fixed no-repeat !important;
 }
 
-#app-mount {
+
+/* Discord main wrapper */
+[class*="app_"] {
     background: transparent !important;
 }
 
 
 /* =========================
-   MAIN DISCORD LAYOUT
+   MAIN LAYOUT
 ========================= */
 
 [class*="base_"] {
@@ -41,7 +45,7 @@ body {
 
 
 /* =========================
-   SERVER BAR
+   SERVER LIST
 ========================= */
 
 [class*="guilds_"] {
@@ -59,7 +63,7 @@ body {
 
 
 /* =========================
-   CHAT
+   CHAT AREA
 ========================= */
 
 [class*="chat_"],
@@ -69,7 +73,7 @@ body {
 
 
 /* =========================
-   MEMBERS LIST
+   MEMBER LIST
 ========================= */
 
 [class*="membersWrap_"],
@@ -79,7 +83,7 @@ body {
 
 
 /* =========================
-   MESSAGE INPUT
+   MESSAGE BOX
 ========================= */
 
 [class*="channelTextArea_"] {
@@ -89,10 +93,9 @@ body {
 
 
 /* =========================
-   FRIENDS / HOME PAGE
+   FRIENDS PAGE
 ========================= */
 
-/* Keep friends page readable */
 [class*="peopleColumn_"],
 [class*="nowPlayingColumn_"] {
     background: rgba(20,20,20,0.85) !important;
@@ -100,38 +103,36 @@ body {
 
 
 /* =========================
-   SETTINGS MENU
+   SETTINGS
 ========================= */
 
-/* Completely solid settings */
 [class*="standardSidebarView_"],
 [class*="contentRegion_"],
 [class*="contentRegionScroller_"],
 [class*="sidebarRegion_"],
 [class*="sidebarRegionScroller_"] {
-
     background: var(--panel-bg) !important;
 }
 
 
 /* =========================
-   POPUPS / MENUS
+   POPUPS
 ========================= */
 
 [class*="menu_"],
 [class*="popout_"],
 [class*="modal_"] {
-
     background: rgba(20,20,20,0.96) !important;
 }
 
 
 /* =========================
-   REMOVE UNWANTED BLUR
+   REMOVE DISCORD DEFAULT BG
 ========================= */
 
+[class*="bg_"],
 [class*="layer_"] {
-    backdrop-filter: none !important;
+    background: transparent !important;
 }
 
 
