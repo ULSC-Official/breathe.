@@ -13,8 +13,7 @@
 
 /* Wallpaper */
 html,
-body,
-#app-mount {
+body {
     background-image:
         linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
         url("https://raw.githubusercontent.com/ULSC-Official/breathe./main/Screenshot%202026-06-26%20153918.png") !important;
@@ -25,17 +24,14 @@ body,
     background-color: var(--background-fallback) !important;
 }
 
-.appMount_fae9dd,
-[class^="bg_"],
-[class^="layers_"],
-[class^="layer_"] {
+/* Allow wallpaper through */
+[class^="bg_"] {
     background: transparent !important;
 }
 
 /* Force Discord's main containers transparent */
 [class^="base_"],
 [class^="container_"],
-[class^="content_"],
 [class^="chat_"],
 [class^="chatContent_"],
 [class^="title_"],
