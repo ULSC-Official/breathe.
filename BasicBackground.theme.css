@@ -15,14 +15,33 @@
 html,
 body,
 #app-mount {
-    background:
-        var(--overlay-dark),
-        var(--background-image) center/cover fixed no-repeat,
-        var(--background-fallback) !important;
+    background-image:
+        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+        url("https://raw.githubusercontent.com/ULSC-Official/breathe./main/Screenshot%202026-06-26%20153918.png") !important;
+    background-position: center !important;
+    background-size: cover !important;
+    background-attachment: fixed !important;
+    background-repeat: no-repeat !important;
+    background-color: var(--background-fallback) !important;
 }
 
-[class^="app_"] {
+#app-mount,
+.appMount_fae9dd,
+[class^="bg_"],
+[class^="layers_"],
+[class^="layer_"] {
     background: transparent !important;
+}
+
+/* Force Discord's main containers transparent */
+[class^="base_"],
+[class^="container_"],
+[class^="content_"],
+[class^="chat_"],
+[class^="chatContent_"],
+[class^="title_"],
+[class^="members_"] {
+    background-color: transparent !important;
 }
 
 /* Main Discord areas only */
@@ -30,6 +49,7 @@ body,
     background: rgba(0,0,0,0.20) !important;
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
+    overflow: hidden;
 }
 
 [class^="sidebar_"] {
@@ -37,6 +57,7 @@ body,
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     transition: background 0.3s ease, backdrop-filter 0.3s ease;
+    overflow: hidden;
 }
 
 [class^="guilds_"] {
@@ -50,17 +71,13 @@ body,
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     transition: background 0.3s ease, backdrop-filter 0.3s ease;
+    overflow: hidden;
 }
 
 [class^="channelTextArea_"] {
     background: rgba(20,20,20,0.65) !important;
     border-radius: 12px;
     transition: background 0.3s ease, backdrop-filter 0.3s ease;
-}
-
-[class^="chat_"],
-[class^="content_"] {
-    background: transparent !important;
 }
 
 /* DO NOT make settings/popouts transparent */
