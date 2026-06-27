@@ -1,31 +1,47 @@
 /**
- * @name Breathe.
- * @author unknowenuser_95
- * @description Custom background theme for Vencord.
+ * @name Breathe Background
+ * @author You
+ * @description Custom Discord background
  * @version 1.0
  */
-/* To change stuff like the colors, transparency and background image, change the variables inside the root {}. */
 
 :root {
     --background-image: url("https://raw.githubusercontent.com/ULSC-Official/breathe./main/Screenshot%202026-06-26%20153918.png");
 }
 
+/* Keep the wallpaper visible */
+#app-mount {
+    background: transparent !important;
+}
+
 body {
-    background: var(--background-image) center/cover fixed no-repeat;
+    background: var(--background-image) center/cover fixed no-repeat !important;
 }
 
+/* Discord main areas */
+[class*="app_"],
+[class*="bg_"],
+[class*="layer_"],
+[class*="base_"] {
+    background: transparent !important;
+}
+
+/* Channel area */
 [class*="chatContent"] {
-    background: rgba(0,0,0,0.15);
+    background: rgba(0, 0, 0, 0.15) !important;
 }
 
+/* Server/channel sidebar */
 [class*="sidebar"] {
-    background: rgba(0,0,0,0.15);
+    background: rgba(0, 0, 0, 0.20) !important;
 }
 
-[class*="members"] {
-    background: rgba(0,0,0,0.15);
+/* Member list */
+[class*="membersWrap"] {
+    background: rgba(0, 0, 0, 0.15) !important;
 }
 
+/* Message box */
 [class*="channelTextArea"] {
-    background: rgba(0,0,0,0.25);
+    background: rgba(0, 0, 0, 0.25) !important;
 }
