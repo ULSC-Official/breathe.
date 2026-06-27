@@ -1,135 +1,46 @@
 /**
- * @name breathe.
- * @author unknowenuser_95
- * @description Just breathe.
+ * @name breathe TEST
  * @version 1.0
  */
 
-
-/* =========================
-   VARIABLES
-========================= */
-
 :root {
     --background-image: url("https://picsum.photos/1920/1080");
-
-    --sidebar-bg: rgba(0, 0, 0, 0.25);
-    --chat-bg: rgba(0, 0, 0, 0.18);
-    --settings-bg: rgb(20, 20, 20);
 }
 
 
-/* =========================
-   BACKGROUND
-========================= */
-
-body {
-    background-image: var(--background-image) !important;
-    background-position: center !important;
-    background-size: cover !important;
-    background-repeat: no-repeat !important;
-    background-attachment: fixed !important;
-}
-
-
+/* Force visible wallpaper */
 #app-mount {
     background: transparent !important;
 }
 
+#app-mount::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
 
-/* Discord background containers */
+    background-image: var(--background-image) !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+
+    z-index: 0;
+    pointer-events: none;
+}
+
+
+/* Put Discord UI above wallpaper */
+#app-mount > * {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* Remove Discord backgrounds */
 [class*="app_"],
 [class*="bg_"],
 [class*="base_"] {
     background: transparent !important;
-}
-
-
-/* =========================
-   SERVER LIST
-========================= */
-
-[class*="guilds_"] {
-    background: var(--sidebar-bg) !important;
-}
-
-
-/* =========================
-   CHANNEL LIST
-========================= */
-
-[class*="sidebar_"] {
-    background: var(--sidebar-bg) !important;
-}
-
-
-/* =========================
-   CHAT
-========================= */
-
-[class*="chatContent_"] {
-    background: var(--chat-bg) !important;
-}
-
-
-/* =========================
-   MEMBERS
-========================= */
-
-[class*="membersWrap_"] {
-    background: var(--sidebar-bg) !important;
-}
-
-
-/* =========================
-   MESSAGE BOX
-========================= */
-
-[class*="channelTextArea_"] {
-    background: rgba(0,0,0,0.35) !important;
-    border-radius: 12px;
-}
-
-
-/* =========================
-   SETTINGS
-========================= */
-
-[class*="standardSidebarView_"],
-[class*="contentRegion_"],
-[class*="contentRegionScroller_"],
-[class*="sidebarRegion_"],
-[class*="sidebarRegionScroller_"] {
-    background: var(--settings-bg) !important;
-}
-
-
-/* =========================
-   FRIENDS PAGE
-========================= */
-
-[class*="peopleColumn_"],
-[class*="nowPlayingColumn_"] {
-    background: rgb(20,20,20) !important;
-}
-
-
-/* =========================
-   MENUS / POPOUTS
-========================= */
-
-[class*="menu_"],
-[class*="popout_"],
-[class*="modal_"] {
-    background: rgba(20,20,20,0.96) !important;
-}
-
-
-/* =========================
-   SCROLLBAR
-========================= */
-
-::-webkit-scrollbar-thumb {
-    background: rgba(255,255,255,0.15);
-    border-radius: 10px;
 }
