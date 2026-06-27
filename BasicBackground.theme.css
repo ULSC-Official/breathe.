@@ -1,7 +1,5 @@
 /**
  * @name Breathe Background
- * @author You
- * @description Custom Discord background
  * @version 1.0
  */
 
@@ -9,39 +7,41 @@
     --background-image: url("https://raw.githubusercontent.com/ULSC-Official/breathe./main/Screenshot%202026-06-26%20153918.png");
 }
 
-/* Keep the wallpaper visible */
+/* Wallpaper */
 #app-mount {
-    background: transparent !important;
-}
-
-body {
     background: var(--background-image) center/cover fixed no-repeat !important;
 }
 
-/* Discord main areas */
-[class*="app_"],
-[class*="bg_"],
-[class*="layer_"],
-[class*="base_"] {
-    background: transparent !important;
+/* Remove Discord's solid theme backgrounds */
+.theme-dark,
+.theme-light {
+    --background-primary: transparent !important;
+    --background-secondary: rgba(0, 0, 0, 0.25) !important;
+    --background-secondary-alt: rgba(0, 0, 0, 0.20) !important;
+    --background-tertiary: transparent !important;
+    --background-base-lower: transparent !important;
+    --background-base-low: transparent !important;
+    --background-base: transparent !important;
 }
 
-/* Channel area */
-[class*="chatContent"] {
-    background: rgba(0, 0, 0, 0.15) !important;
+/* Main Discord panels */
+[class*="chat_"],
+[class*="chatContent"],
+[class*="container_"],
+[class*="sidebar_"],
+[class*="members_"] {
+    background-color: transparent !important;
 }
 
-/* Server/channel sidebar */
-[class*="sidebar"] {
-    background: rgba(0, 0, 0, 0.20) !important;
+/* Add back readability */
+[class*="sidebar_"] {
+    background-color: rgba(0,0,0,0.20) !important;
 }
 
-/* Member list */
-[class*="membersWrap"] {
-    background: rgba(0, 0, 0, 0.15) !important;
+[class*="members_"] {
+    background-color: rgba(0,0,0,0.20) !important;
 }
 
-/* Message box */
 [class*="channelTextArea"] {
-    background: rgba(0, 0, 0, 0.25) !important;
+    background-color: rgba(0,0,0,0.30) !important;
 }
