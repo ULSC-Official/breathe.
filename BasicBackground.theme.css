@@ -1,1 +1,131 @@
---background-image: url("https://raw.githubusercontent.com/ULSC-Official/breathe./main/breathe.png");
+/**
+ * @name breathe.
+ * @author unknowenuser_95
+ * @description Just breathe.
+ * @version 1.0
+ */
+
+
+/* =========================
+   VARIABLES
+========================= */
+
+:root {
+    --background-image: url("https://raw.githubusercontent.com/ULSC-Official/breathe./main/breathe.png");
+
+    --sidebar-bg: rgba(0, 0, 0, 0.25);
+    --chat-bg: rgba(0, 0, 0, 0.18);
+    --settings-bg: rgb(20, 20, 20);
+}
+
+
+/* =========================
+   MAIN WALLPAPER
+========================= */
+
+body {
+    background: var(--background-image) center / cover fixed no-repeat !important;
+}
+
+
+#app-mount {
+    background: transparent !important;
+}
+
+
+/* Let wallpaper show through Discord */
+[class*="app_"],
+[class*="bg_"],
+[class*="base_"] {
+    background: transparent !important;
+}
+
+
+/* =========================
+   SERVER LIST
+========================= */
+
+[class*="guilds_"] {
+    background: var(--sidebar-bg) !important;
+}
+
+
+/* =========================
+   CHANNEL SIDEBAR
+========================= */
+
+[class*="sidebar_"] {
+    background: var(--sidebar-bg) !important;
+}
+
+
+/* =========================
+   CHAT AREA
+========================= */
+
+[class*="chatContent_"] {
+    background: var(--chat-bg) !important;
+}
+
+
+/* =========================
+   MEMBER LIST
+========================= */
+
+[class*="membersWrap_"] {
+    background: var(--sidebar-bg) !important;
+}
+
+
+/* =========================
+   MESSAGE BOX
+========================= */
+
+[class*="channelTextArea_"] {
+    background: rgba(0, 0, 0, 0.35) !important;
+    border-radius: 12px;
+}
+
+
+/* =========================
+   FRIENDS / HOME PAGE
+========================= */
+
+[class*="peopleColumn_"],
+[class*="nowPlayingColumn_"] {
+    background: rgba(20, 20, 20, 0.85) !important;
+}
+
+
+/* =========================
+   SETTINGS MENU
+========================= */
+
+[class*="standardSidebarView_"],
+[class*="contentRegion_"],
+[class*="contentRegionScroller_"],
+[class*="sidebarRegion_"],
+[class*="sidebarRegionScroller_"] {
+    background: var(--settings-bg) !important;
+}
+
+
+/* =========================
+   POPUPS / MENUS
+========================= */
+
+[class*="menu_"],
+[class*="popout_"],
+[class*="modal_"] {
+    background: rgba(20, 20, 20, 0.96) !important;
+}
+
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.15);
+    border-radius: 10px;
+}
