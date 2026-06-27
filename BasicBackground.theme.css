@@ -29,9 +29,8 @@ body {
     background: transparent !important;
 }
 
-/* Force Discord's main containers transparent */
+/* Only clear actual chat layers */
 [class^="base_"],
-[class^="container_"],
 [class^="chat_"],
 [class^="chatContent_"],
 [class^="title_"],
