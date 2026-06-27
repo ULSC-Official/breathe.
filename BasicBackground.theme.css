@@ -2,7 +2,7 @@
  * @name breathe.
  * @author unknowenuser_95
  * @description Just breathe.
- * @version 1.0
+ * @version 1.2
  */
 
 
@@ -20,18 +20,43 @@
 
 
 /* =========================
-   BACKGROUND
+   WALLPAPER LAYER
 ========================= */
 
-body,
+body {
+    background: transparent !important;
+}
+
 #app-mount {
-    background: var(--background-image) center / cover fixed no-repeat !important;
+    background: transparent !important;
+}
+
+/* Actual wallpaper */
+#app-mount::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background-image: var(--background-image);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    z-index: -2;
+    pointer-events: none;
 }
 
 
-/* Discord main wrapper */
-[class*="app_"] {
-    background: transparent !important;
+/* Optional darkness overlay */
+#app-mount::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0,0,0,0.15);
+
+    z-index: -1;
+    pointer-events: none;
 }
 
 
@@ -40,6 +65,10 @@ body,
 ========================= */
 
 [class*="base_"] {
+    background: transparent !important;
+}
+
+[class*="app_"] {
     background: transparent !important;
 }
 
@@ -93,7 +122,7 @@ body,
 
 
 /* =========================
-   FRIENDS PAGE
+   FRIENDS / HOME MENU
 ========================= */
 
 [class*="peopleColumn_"],
@@ -103,7 +132,7 @@ body,
 
 
 /* =========================
-   SETTINGS
+   SETTINGS MENU
 ========================= */
 
 [class*="standardSidebarView_"],
@@ -116,7 +145,7 @@ body,
 
 
 /* =========================
-   POPUPS
+   POPUPS / MENUS
 ========================= */
 
 [class*="menu_"],
@@ -127,10 +156,9 @@ body,
 
 
 /* =========================
-   REMOVE DISCORD DEFAULT BG
+   REMOVE LAYER TRANSPARENCY ISSUES
 ========================= */
 
-[class*="bg_"],
 [class*="layer_"] {
     background: transparent !important;
 }
